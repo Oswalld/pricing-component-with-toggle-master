@@ -8,12 +8,29 @@ body{
     font-family: 'Montserrat', sans-serif; //700
     font-weight: 700;
     font-size: 15px;
+
+    overflow: hidden;
+
+    height: 100vh;
+
+    background-color: $Very-Light-Grayish-Blue;
+    color: $Grayish-Blue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: $Dark-Grayish-Blue;
 }
 
 
 
-@media only screen and (min-width : 768px){
-    
+@media only screen and (max-width : 768px){
+    body{
+        justify-content: stretch;
+    }
 }
 
 

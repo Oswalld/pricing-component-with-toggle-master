@@ -1,0 +1,200 @@
+// BACKGROUND
+
+.background-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+}
+.background-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+}
+
+// TOGGLE BUTTON
+
+.toggle-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.toggle{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+
+    p{
+        font-size: 0.9rem;
+        color: $Light-Grayish-Blue;
+    }
+
+    input{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.toggle-box{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 2em;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+
+    background: $gradient;
+    transition: 0.2s ease;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &::before{
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        border-radius: 50%;
+        background-color: white;
+        transition: 0.3s ease;
+    }
+}
+
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+
+.monthly{
+    display: none;
+}
+.show-monthly .monthly{
+    display: block;
+}
+.show-monthly .yearly{
+    display: none;
+}
+
+// CARDS
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: white;
+    padding: 1.2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 14px rgba(73, 76, 95, 0.034);
+
+    .title{
+        font-size: 1rem;
+        color: $Grayish-Blue;
+    }
+    .price{
+        font-size: 3.25rem;
+        margin: 0.3em 0;
+    }
+    .benefits{
+        text-align: center;
+        width: 80%;
+        border-top: 1px solid rgba(179, 181, 198, 0.5) ;
+
+        li{
+            list-style: none;
+            padding: 1em 0;
+            border-bottom: 1px solid rgba(179, 181, 198, 0.5) ;
+        }
+    }
+    .button{
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 5px;
+        margin-top: 1em;
+        width: 80%;
+        padding: 1em;
+        color: white;
+        font-size: 0.75em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: $gradient;
+        outline: none;
+
+        &:hover{
+            border-color:$Light-Grayish-Blue;
+            background: white;
+            color: $Grayish-Blue;
+        }
+    }
+}
+
+.card-two{
+    background: Linear-Gradient(to bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+    color: white;
+    z-index: 10;
+    transform: scale(1.1);
+
+    .title, .price{
+        color: white;
+    }
+
+    .button{
+        border-color: $Light-Grayish-Blue;
+        background: white;
+        color: $Grayish-Blue;
+
+        &:hover{
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+    }
+}
+
+
+@media only screen and (max-width : 768px){
+    .toggle-container{
+        margin-top: 2em;
+    }
+
+    .slider:hover{
+        opacity: 1;
+    }
+    .cards{
+        gap: 2em;
+        margin-bottom: 2em;
+    }
+    .card-two{
+        transform: scale(1);
+    }
+    .background-top img{
+        max-width: 200px;
+    }
+    .background-bottom{
+        display: none;
+    }
+}

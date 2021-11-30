@@ -2,7 +2,7 @@
 
 // ### Primary
 
-$gradient : Linear-Gradient (hsl(236, 72%, 79%) to hsl(237, 63%, 64%));
+$gradient : Linear-Gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
 
 // ### Neutral
 
@@ -15,3 +15,4 @@ $Dark-Grayish-Blue: hsl(232, 13%, 33%);
 
 
 @import 'general';
+@import 'pricing-component';
